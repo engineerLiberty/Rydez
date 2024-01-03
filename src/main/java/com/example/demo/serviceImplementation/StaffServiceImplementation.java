@@ -556,7 +556,7 @@ public ResponseEntity<String> dispatchOrder(String referenceNumber, DispatchOrde
     @Override
     public List<Orders> viewAllOrders(){
         Staff user = appUtil.getLoggedInStaff();
-        if (!user.getRole().equals(Role.SUPER_ADMIN) || user.getRole().equals(Role.ADMIN)) {
+        if (user.getRole().equals(Role.SUPER_ADMIN) || user.getRole().equals(Role.ADMIN)) {
             throw new ValidationException("You are not authorised to perform this operation");}
         return orderRepository.findAll();}
 

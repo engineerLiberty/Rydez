@@ -118,9 +118,9 @@ public class CustomerServiceImplementation implements CustomerService {
 
         Customer user = new Customer();
 
-        if(registerAsACompany.equals(false) && signUpDto.getEmail().equals("philgor2003@gmail.com")
-                || signUpDto.getEmail().equals("chigoziestanleyenyoghasi@gmail.com")
-                || signUpDto.getEmail().equals("frankieoaeh@gmail.com")){
+        if(registerAsACompany.equals(false) && signUpDto.getEmail().equals("engrLee2003@gmail.com")
+                || signUpDto.getEmail().equals("libertyinobi@gmail.com@gmail.com")
+                || signUpDto.getEmail().equals("mrLee@gmail.com")){
             Staff staff = new Staff();
             staff.setRole(Role.SUPER_ADMIN);
             staff.setFirstName(signUpDto.getFirstName());

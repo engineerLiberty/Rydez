@@ -536,6 +536,8 @@ public ResponseEntity<String> dispatchOrder(String referenceNumber, DispatchOrde
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse<>("Failed", "There is no user with this email!", null));
     }
 
+
+
     private void moveStorageFromCustomerToStaffDb(String email){
         Optional<Customer> user1 = customerRepository.findByEmail(email);
         Staff staff = new Staff();

@@ -90,14 +90,15 @@ public class ExcelExportUtils {
 
     private void writeOrderDetails(){
         int rowCount = 2;
-//        Row row = sheet.createRow(0); //the title header
+        Row row = sheet.createRow(0); //the title header
         CellStyle cellStyle = workbook.createCellStyle();
         XSSFFont font = workbook.createFont();
         font.setFontHeight(14);
         cellStyle.setFont(font);
 
         for(Orders orders : ordersList){
-            Row row = sheet.createRow(rowCount++);
+             row = sheet.createRow(rowCount++);
+//            Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
             createCell(row, columnCount++, orders.getId(), cellStyle);
             createCell(row, columnCount++, orders.getCreatedAt(), cellStyle);

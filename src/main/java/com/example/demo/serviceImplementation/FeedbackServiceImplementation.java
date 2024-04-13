@@ -79,7 +79,7 @@ public class FeedbackServiceImplementation implements FeedbackService {
         }else {
             rider.get().setRatingsSum(rider.get().getRatingsSum()+1);
         }
-        rider.get().setAverageRating(rider.get().getRatingsSum()/rider.get().getRatingsCount());
+        rider.get().setAverageRating((float) rider.get().getRatingsSum() /rider.get().getRatingsCount());
         staffRepository.save(rider.get());
 
         Feedback feedback = new Feedback();

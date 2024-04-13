@@ -225,7 +225,7 @@ public ResponseEntity<String> dispatchOrder(String referenceNumber, DispatchOrde
                     "Rider Phone Number: " + order.get().getReceiverPhoneNumber() + '\n' +
                     "Current Date: " + currentDateTime + '\n' +
                     "Price: " + order.get().getPrice() + '\n' +
-                    "Account Name: " + "AriXpress Delivery Nigeria Limited " + '\n' +
+                    "Account Name: " + "rydez Delivery Nigeria Limited " + '\n' +
                     "Account Number: " + "0044232307 " + '\n' +
                     "Bank Name: " + "GTB");
         } else if (order.get().getThirdPartyPickUp().equals(true) && order.get().getPaymentType().equals(PaymentType.cash)) {
@@ -262,7 +262,7 @@ public ResponseEntity<String> dispatchOrder(String referenceNumber, DispatchOrde
                     "Rider Phone Number: " + order.get().getReceiverPhoneNumber() + '\n' +
                     "Current Date: " + currentDateTime + '\n' +
                     "Price: " + order.get().getPrice() + '\n' +
-                    "Account Name: " + "AriXpress Delivery Nigeria Limited " + '\n' +
+                    "Account Name: " + "rydez Delivery Nigeria Limited " + '\n' +
                     "Account Number: " + "0044232307 " + '\n' +
                     "Bank Name: " + "GTB");
         } else {

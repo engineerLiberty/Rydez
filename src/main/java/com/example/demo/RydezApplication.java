@@ -6,9 +6,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class AriXpressLogisticsApplication {
+public class RydezApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(AriXpressLogisticsApplication.class, args);
+		SpringApplication.run(RydezApplication.class, args);
 	}
 }
 

@@ -89,7 +89,6 @@ public class DistancePriceServiceImplementation implements DistancePriceService 
         DistancePrice distancePrice = distancePriceRepository.findPriceByDistanceRange(distance);
         if(distancePrice != null){distancePriceRepository.delete(distancePrice);}}
 
-
     @Override
     public Map<String, Double> dpMap(DistanceMapDto distanceMapDto) {
         Map<String, Double> priceList = new HashMap<>();
@@ -112,5 +111,4 @@ public class DistancePriceServiceImplementation implements DistancePriceService 
             dPriceRepository.save(keyValueEntity);
         });
     }
-
 }

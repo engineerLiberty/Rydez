@@ -185,7 +185,6 @@ public class AdminController {
         return staffService.viewAnOrder(id);
     }
 
-
     @GetMapping("/get-all-orders") //tested and is fine
     public List<AllOrdersDetailsResponseDto> getAllOrders() {
         return staffService.getAllOrders();

@@ -51,7 +51,9 @@ public interface CustomerService {
     ResponseEntity<LoggedInUserProfileResponse> displayUserInformation();
     OrderPriceResponse directDeliveryDistanceCalculator (DirectDeliveryDto directDeliveryDto) throws IOException, InterruptedException, ParseException;
     OrderPriceResponse indirectDeliveryDistanceCalculator(ThirdPartySenderDto thirdPartySenderDto) throws IOException, InterruptedException, ParseException;
-    void abort(OrderPriceResponse orderPriceResponse);
+//    void abort(OrderPriceResponse orderPriceResponse);
+
+    void abort(String referenceNumber);
 
     List<OrderDetailsResponse> allMyOrders(Long clientCode);
     List<Orders> sortedCustomersOrders(Long clientCode);

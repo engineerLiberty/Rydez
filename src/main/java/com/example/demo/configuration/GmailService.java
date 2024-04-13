@@ -30,7 +30,7 @@ public class GmailService implements EmailService{
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
         try {
-            helper.setFrom("arixpresslogistics@gmail.com", "AriXpress");
+            helper.setFrom("rydez360clock@gmail.com", "rydez");
             helper.setTo(mailDto.getTo());
             helper.setSubject(mailDto.getSubject());
             helper.setText(mailDto.getMessage(), true);
@@ -51,7 +51,7 @@ public class GmailService implements EmailService{
 
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "utf-8");
         try {
-            helper.setFrom("arixpresslogistics@gmail.com", "AriXpress");
+            helper.setFrom("rydez360clock@gmail.com", "rydez");
             helper.setTo(mailDto.getTo());
             helper.setSubject("Order Details PDF");
             File pdfFile = new File("Order_Details.pdf");

@@ -16,9 +16,9 @@ public class SwaggerConfig {
         final String securitySchemaName = "bearerAuth";
         return new OpenAPI()
                 .info(new Info()
-                        .title("AriXpress Bike Logistics")
+                        .title("Rydez Bike Logistics")
                         .version("1.1")
-                        .description("AriXpress Bike Logistics API Documentation")
+                        .description("rydez Bike Logistics API Documentation")
                 )
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemaName))
                 .components(new Components()

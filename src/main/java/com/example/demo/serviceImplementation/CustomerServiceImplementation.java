@@ -152,7 +152,7 @@ public class CustomerServiceImplementation implements CustomerService {
                     + "<p> Click <a href=" + URL +">Activate</a> to activate your account</p>";
             MailDto mailDto = MailDto.builder()
                     .to(signUpDto.getEmail())
-                    .subject("AriXpress: Verify Your Account")
+                    .subject("rydez: Verify Your Account")
                     .message(content)
                     .build();
             emailService.sendEmail(mailDto);}
@@ -171,7 +171,7 @@ public class CustomerServiceImplementation implements CustomerService {
                             + "<p> Click <a href=" + url +">Activate</a> to activate your account</p>";
             MailDto mailDto = MailDto.builder()
                     .to(signUpDto.getEmail())
-                    .subject("AriXpress: Verify Your Account")
+                    .subject("rydez: Verify Your Account")
                     .message(content)
                     .build();
             emailService.sendEmail(mailDto);
@@ -256,7 +256,7 @@ public class CustomerServiceImplementation implements CustomerService {
                             + "<p>Click <a href=" + url + ">Reset Password</a> to reset your password</p> " + '\n';
             MailDto mailDto = MailDto.builder()
                     .to(forgotPasswordDto.getEmail())
-                    .subject("AriXpress: Reset your password")
+                    .subject("rydez: Reset your password")
                     .message(content)
                     .build();
             emailService.sendEmail(mailDto);
@@ -272,7 +272,7 @@ public class CustomerServiceImplementation implements CustomerService {
                             + "<p>Click <a href=" + url + ">Reset Password</a> to reset your password</p> " + '\n';
             MailDto mailDto = MailDto.builder()
                     .to(forgotPasswordDto.getEmail())
-                    .subject("AriXpress: Reset your password")
+                    .subject("rydez: Reset your password")
                     .message(content)
                     .build();
             emailService.sendEmail(mailDto);
@@ -317,7 +317,7 @@ public class CustomerServiceImplementation implements CustomerService {
     public ResponseEntity<ApiResponse> bookADelivery(OrderPriceResponse orderPriceResponse) throws IOException, ParseException, InterruptedException {
         Customer customer = appUtil.getLoggedInCustomer();
         Long id = customer.getClientCode();
-        String adminEmail = "arixpressng@gmail.com";
+        String adminEmail = "rydezng@gmail.com";
 
         Optional<Orders> orders = orderRepository.findByClientCodeAndReferenceNumber(id, orderPriceResponse.getReferenceNumber());
 
@@ -331,7 +331,7 @@ public class CustomerServiceImplementation implements CustomerService {
 
             MailDto mailDto = MailDto.builder()
                     .to(adminEmail)
-                    .subject("AriXpress: A new order")
+                    .subject("rydez: A new order")
                     .message(content)
                     .build();
             emailService.sendEmail(mailDto);
@@ -345,7 +345,7 @@ public class CustomerServiceImplementation implements CustomerService {
     public ResponseEntity<ApiResponse> cancelABooking(String referenceNumber, CancelABookingDto cancelABookingDto) {
         Customer customer = appUtil.getLoggedInCustomer();
         Long clientCode = customer.getClientCode();
-        String adminEmail = "arixpressng@gmail.com";
+        String adminEmail = "rydezng@gmail.com";
         Optional<Orders> order = Optional.ofNullable(orderRepository.findByClientCodeAndReferenceNumber(clientCode, referenceNumber)
                 .orElseThrow(() -> new ResourceNotFoundException("You have no order with the reference number " + referenceNumber)));
         if(order.get().getOrderStatus().equals(OrderStatus.INPROGRESS)){
@@ -422,7 +422,7 @@ public class CustomerServiceImplementation implements CustomerService {
         Customer customer = appUtil.getLoggedInCustomer();
         String email = customer.getEmail();
         MailDto mailDto = MailDto.builder()
-                .to("arixpressng@gmail.com")
+                .to("rydezng@gmail.com")
                 .subject("Tracking Request")
                 .message("I wish to track the order with trackingNumber: " + trackingDto.getTrackingNumber()+". " + email + " is my email address")
                 .build();
@@ -675,8 +675,8 @@ public class CustomerServiceImplementation implements CustomerService {
     }
 
     @Override
-    public void abort(OrderPriceResponse orderPriceResponse) {
-        Optional<Orders> orders = orderRepository.findByReferenceNumber(orderPriceResponse.getReferenceNumber());
+    public void abort(String referenceNumber) {
+        Optional<Orders> orders = orderRepository.findByReferenceNumber(referenceNumber);
         if (orders.isEmpty()) {
             throw new NotFoundException("Order not found or does not exist!");
         }

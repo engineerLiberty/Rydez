@@ -29,6 +29,7 @@ public class AppUtil {
 
     private final CustomerRepository customerRepository;
     private final StaffRepository staffRepository;
+    private final Logger logger = LoggerFactory.getLogger(AppUtil.class);
 
 
     public Staff getLoggedInStaff() throws ResourceNotFoundException {
@@ -52,8 +53,6 @@ public class AppUtil {
             return  Arrays.stream(delimitedString.split(",")).collect(Collectors.toList());
         return null;
     }
-
-    private final Logger logger = LoggerFactory.getLogger(AppUtil.class);
 
     public void log(String message) {
         logger.info(message);

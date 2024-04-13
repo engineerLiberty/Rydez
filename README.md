@@ -1,4 +1,4 @@
-#  Pickup Web Application: rydez's
+#  Pickup Web Application: Rydez's
 This is a Spring Boot application developed for a start-up bike logistics company in Nigeria. The application allows users to sign up and book rides to pick up items of choice for them from one location to another. It also makes provision for corporate users that may need to deliver items to their customers at their location of choice. Also included is a session for the site admin (company staff) to manage the orders as they come. The admin can dispatch orders and also view order histories and summaries using various filters. For the database, MySQL was used. Spring security (JWT) was used to implement authentication and authorization, and the endpoints were documented using Swagger.
 
 ## Project Setup

@@ -118,9 +118,8 @@ public class CustomerServiceImplementation implements CustomerService {
 
         Customer user = new Customer();
 
-        if(registerAsACompany.equals(false) && signUpDto.getEmail().equals("engrLee2003@gmail.com")
-                || signUpDto.getEmail().equals("libertyinobi@gmail.com@gmail.com")
-                || signUpDto.getEmail().equals("mrLee@gmail.com")){
+        if(registerAsACompany.equals(false) && signUpDto.getEmail().equals("libertyimobi@gmail.com")
+                || signUpDto.getEmail().equals("limobi@paga.com@gmail.com")){
             Staff staff = new Staff();
             staff.setRole(Role.SUPER_ADMIN);
             staff.setFirstName(signUpDto.getFirstName());
